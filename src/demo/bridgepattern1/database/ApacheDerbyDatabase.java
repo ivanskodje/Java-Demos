@@ -14,25 +14,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package demo.bridgepattern.database;
+package demo.bridgepattern1.database;
+
+import demo.bridgepattern1.database.IDatabase;
 
 /**
- * The IDatabase is going to be taken in by "DatabaseHandler" as a bridge to run
- * the commands that would be expected between the Handler and Database.
- *
- * IDatabase is a database interface that each followed database will inherit.
- * This allows us to be independent of the "how we do it", and can focus more on
- * "what we can do" when we create classes that implements IDatabase.
- *
- * For the purpose of this demo, we have only included "connect()". The same
- * principle also applies for executing queries and pulling data from the
- * database.
+ * This is where you would implement the "how we do it" from the IDatabase
+ * interface.
  *
  * @author Ivan Skodje
  */
-public interface IDatabase
+public class ApacheDerbyDatabase implements IDatabase
 {
 
-	/* Establishes connection with server */
-	public void connect();
+	@Override
+	public void connect()
+	{
+		System.out.println("Connected to the Apache Derby database!");
+	}
+
 }

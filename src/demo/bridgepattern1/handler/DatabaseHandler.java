@@ -14,43 +14,37 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package demo.bridgepattern.handler;
+package demo.bridgepattern1.handler;
 
-import demo.bridgepattern.database.IDatabase;
+import demo.bridgepattern1.database.IDatabase;
 
 /**
- * BasicDatabaseHandler is an extension to the DatabaseHandler abstraction. This
- * allows us to easily add new functions and features when needed. Usually to
- * provide more options to deal with the same IDatabase.
+ * We define the abstraction, and we keep the reference to the IDatabase. The
+ * IDatabase is the interface that the Databases implements.
  *
- * This is more formally known as the refined abstraction in a bridge design
- * pattern.
+ * This is more formally known as the "Abstraction" in a bridge design pattern.
  *
  * @author Ivan Skodje
  */
-public class BasicDatabaseHandler extends DatabaseHandler
+public abstract class DatabaseHandler
 {
+
+	protected IDatabase database;
 
 	/**
 	 * We use composition and expect an IDatabase implemented object.
 	 *
 	 * @param database
 	 */
-	public BasicDatabaseHandler(IDatabase database)
+	public DatabaseHandler(IDatabase database)
 	{
-		super(database);
+		this.database = database;
 	}
 
 	/**
-	 * Connect to the database.
-	 *
-	 * We do not know if we are using SQLite or Apache Derby. All we know is
-	 * that any concrete implementation of IDatabase must be able to connect()
+	 * This is the operation we want to perform on the IDatabase. We can also
+	 * add other operations such as "getClients" or other database queries that
+	 * IDatabase may have implemented.
 	 */
-	@Override
-	public void connect()
-	{
-		System.out.println("Doing a basic connect... ");
-		database.connect();
-	}
+	abstract public void connect();
 }

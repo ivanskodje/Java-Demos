@@ -14,21 +14,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package demo.bridgepattern.handler;
+package demo.bridgepattern1.handler;
 
-import demo.bridgepattern.database.IDatabase;
+import demo.bridgepattern1.database.IDatabase;
 
 /**
- * AdvancedDatabaseHandler is an extension to the DatabaseHandler abstraction.
- * This allows us to easily add new functions and features when needed. Usually
- * to provide more options to deal with the same IDatabase.
+ * BasicDatabaseHandler is an extension to the DatabaseHandler abstraction. This
+ * allows us to easily add new functions and features when needed. Usually to
+ * provide more options to deal with the same IDatabase.
  *
  * This is more formally known as the refined abstraction in a bridge design
  * pattern.
  *
  * @author Ivan Skodje
  */
-public class AdvancedDatabaseHandler extends DatabaseHandler
+public class BasicDatabaseHandler extends DatabaseHandler
 {
 
 	/**
@@ -36,10 +36,9 @@ public class AdvancedDatabaseHandler extends DatabaseHandler
 	 *
 	 * @param database
 	 */
-	public AdvancedDatabaseHandler(IDatabase database)
+	public BasicDatabaseHandler(IDatabase database)
 	{
 		super(database);
-		System.out.println("AdvancedDatabaseHandler is doing something advanced from the constructor...");
 	}
 
 	/**
@@ -51,7 +50,7 @@ public class AdvancedDatabaseHandler extends DatabaseHandler
 	@Override
 	public void connect()
 	{
-		System.out.println("Doing an advanced connect... ");
+		System.out.println("Doing a basic connect... ");
 		database.connect();
 	}
 }

@@ -14,22 +14,43 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package demo.bridgepattern.database;
+package demo.bridgepattern2.formatter;
 
-import demo.bridgepattern.database.IDatabase;
+import demo.bridgepattern2.items.Property;
+import java.util.List;
 
 /**
- * This is where you would implement the "how".
+ * Returns a HTML Table with the information given
  *
  * @author Ivan Skodje
  */
-public class SQLiteDatabase implements IDatabase
+public class HTMLFormatter extends Formatter
 {
 
 	@Override
-	public void connect()
+	public String format(String propertyType, List<Property> properties)
 	{
-		System.out.println("Connected to the SQLite database!");
+		String htmlString
+				= "<table>"
+				+ "<tr>"
+				+ "<th>" + "Category" + "</th>"
+				+ "<th>" + propertyType + "</th>"
+				+ "</tr>";
+
+		for (Property property : properties)
+		{
+			htmlString += "<tr>"
+					+ "<td>";
+			htmlString += property.getName();
+			htmlString += "</td>"
+					+ "<td>";
+			htmlString += property.getDescription();
+			htmlString += "</td>"
+					+ "</tr>";
+		}
+
+		htmlString += "</table>";
+		return htmlString;
 	}
 
 }

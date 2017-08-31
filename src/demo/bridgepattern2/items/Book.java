@@ -14,23 +14,59 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package demo.bridgepattern.database;
-
-import demo.bridgepattern.database.IDatabase;
+package demo.bridgepattern2.items;
 
 /**
- * This is where you would implement the "how we do it" from the IDatabase
- * interface.
+ * A book item
  *
  * @author Ivan Skodje
  */
-public class ApacheDerbyDatabase implements IDatabase
+public class Book
 {
 
-	@Override
-	public void connect()
+	private String category;
+	private String name;
+	private String publisher;
+	private int yearPublished;
+
+	public String getCategory()
 	{
-		System.out.println("Connected to the Apache Derby database!");
+		return category;
+	}
+
+	public void setCategory(String category)
+	{
+		this.category = category;
+	}
+
+	public String getName()
+	{
+		return name;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public String getPublisher()
+	{
+		return publisher;
+	}
+
+	public void setPublisher(String publisher)
+	{
+		this.publisher = publisher;
+	}
+
+	public int getYearPublished()
+	{
+		return yearPublished;
+	}
+
+	public void setYearPublished(int yearPublished)
+	{
+		this.yearPublished = yearPublished;
 	}
 
 }
