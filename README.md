@@ -1,9 +1,10 @@
 # Java Demos
-These Java demos are mostly for personal use, as I enjoy keeping myself on my toes. These will also work as a point of reference for various Java pattern, methodologies and techniques I have used and learned.
+These Java demos are mostly for personal use, as I enjoy keeping myself on my toes. These will also work as a point of reference for various Java pattern, methodologies and techniques I use and implement throughout my own projects.
+
+C&C are welcome.
 
 ## Available Java Demos:
- * Java Bridge Pattern - Example 1
- * Java Bridge Pattern - Example 2
+ * 3 Bridge Design Pattern Examples
  
 ## License
 GPLv3 License
